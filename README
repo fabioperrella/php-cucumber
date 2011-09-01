@@ -1,0 +1,26 @@
+Exemplo de como rodar teste de Cucumber numa aplicação PHP
+
+Requisitos:
+- ruby 1.9.2
+- bundler (http://gembundler.com)
+- rvm (nao é obrigatorio, mas é recomendado)
+- browser firefox (v6.0) - atenção: algumas versões de firefox, o selenium nao funciona corretamente
+
+Passos para configurar a aplição de exemplo:
+- copiar (ou fazer link simbolico) a aplicação para que esteja disponivel em http://localhost/php_cucumber (pode ser configurado no arquivo features/step_definitions/conf.yml)
+- no mysql, criar os bancos php_cucumber_test e php_cucumber_dev
+- configurar dados de acesso ao banco nos arquivos config/config.php
+- carregar dados do banco com o comando: "mysql -u root < db/php_cucumber_dev.sql"
+- acessar http://localhost/php_cucumber/example.php
+
+Passos para configurar os testes com Cucumber:
+- no diretorio raiz da aplicação, executar comando "bundle install" para instalar as gems (cucumber, capybara, etc..)
+- configurar dados de acesso ao banco nos arquivos config/config.test.php, features/step_definitions/conf.yml
+- para rodar, executar comando "cucumber" no diretorio raiz da aplicação
+
+Funcionamento básico:
+- ao rodar os testes, é executado o arquivo features/support/env.rb que:
+    - faz a troca do arquivo de configuração da aplicação para que utilize o banco de testes
+    - limpa e carrega novamente o banco de testes para que possamos ter esses valores conhecidos ao criar os testes
+- quando finaliza os testes:
+    - restaura o arquivo de configuração original
