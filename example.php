@@ -11,12 +11,15 @@ $title = $row['title'];
 $content = $row['content'];
 ?>
 <html>
+<head>
+  <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+</head>
 <body>
-<h1><?=$title?></h1>
-<p>
-<?=$content?>
-</p>
-<a href="page3.html">link page3</a>
+  <h1><?=$title?></h1>
+  <p>
+  <?=$content?>
+  </p>
+  <a href="page3.html">link page3</a>
 </body>
 </html>
 <?
