@@ -51,8 +51,7 @@ def rollback_to_core_data
   FileUtils.mv @database_config_path_temp, @database_config_path
 end
 
-at_exit do
-  restore_main_config
+at_exit do  
   rollback_to_core_data
   puts "Cucumber finished, restored original db config file"
 end
