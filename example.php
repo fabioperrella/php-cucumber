@@ -1,7 +1,8 @@
 <?php
 error_reporting(E_ALL);
-$db_name = 'php_cucumber_dev';
-$db = mysql_connect('localhost','root','') or die('nao conseguiu conectar no db');
+require_once 'config/config.php';
+
+$db = mysql_connect($db_host,$db_user,$db_pass) or die('nao conseguiu conectar no db');
 mysql_select_db($db_name,$db) or die("nao achou database $db_name");
 $sql = "select title, content from pages where id=1";
 $res = mysql_query($sql,$db);

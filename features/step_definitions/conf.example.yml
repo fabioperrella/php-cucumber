@@ -1,0 +1,4 @@
+base_url: "http://localhost/php_cucumber"
+db_server: localhost
+db_user: root
+db_name: php_cucumber_test
