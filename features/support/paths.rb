@@ -11,8 +11,8 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
-    when /the login page/
-      "#{base_url}/"    
+    when /the example page/
+      "#{base_url}/example.php"    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

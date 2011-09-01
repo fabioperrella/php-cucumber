@@ -16,7 +16,7 @@ $content = $row['content'];
 <p>
 <?=$content?>
 </p>
-<a href="page2.html">link page2</a>
+<a href="page3.html">link page3</a>
 </body>
 </html>
 <?
